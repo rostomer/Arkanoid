@@ -118,6 +118,48 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4751480331187566, guid: cb8727704f0e4384a8eb4a51c1fc550a,
     type: 2}
   m_PrefabInternal: {fileID: 1283050502}
+--- !u!1001 &162042583
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4034707101143464, guid: 810f13551b1ae03409c297c0f5cf1c41, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4034707101143464, guid: 810f13551b1ae03409c297c0f5cf1c41, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -2.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 4034707101143464, guid: 810f13551b1ae03409c297c0f5cf1c41, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4034707101143464, guid: 810f13551b1ae03409c297c0f5cf1c41, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4034707101143464, guid: 810f13551b1ae03409c297c0f5cf1c41, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4034707101143464, guid: 810f13551b1ae03409c297c0f5cf1c41, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4034707101143464, guid: 810f13551b1ae03409c297c0f5cf1c41, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4034707101143464, guid: 810f13551b1ae03409c297c0f5cf1c41, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 810f13551b1ae03409c297c0f5cf1c41, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,7 +224,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &238825898
 GameObject:
@@ -338,7 +380,7 @@ Transform:
   - {fileID: 683178475}
   - {fileID: 92843202}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &457882489
 GameObject:
@@ -429,7 +471,7 @@ RectTransform:
   - {fileID: 1237705217}
   - {fileID: 238825899}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -573,7 +615,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &595323028
 Prefab:
@@ -612,7 +654,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4330330847090796, guid: fdbef0c2c1acafe4a8b564f0587bdb4c, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 198563789557204552, guid: fdbef0c2c1acafe4a8b564f0587bdb4c,
         type: 2}
@@ -721,7 +763,7 @@ Transform:
   m_LocalScale: {x: 1, y: 50, z: 50}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!114 &848075148
 MonoBehaviour:
@@ -904,7 +946,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4827879123631694, guid: a3d52801ae5579d45b87d32ca1236a56, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3d52801ae5579d45b87d32ca1236a56, type: 2}
@@ -1091,7 +1133,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &2020754555
 AudioSource:
