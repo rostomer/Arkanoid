@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour {
 
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, 0.0f);
 
+
         //rigidbody.velocity = movement;
         rigidbody.velocity = (movement) * speed;
     }
