@@ -76,6 +76,7 @@ public class GameManager : MonoBehaviour {
 
     public void LoseLife()
     {
+        Debug.Log("LifeLost");
         lives--;
         livesText.text = "Lives " + lives;
 

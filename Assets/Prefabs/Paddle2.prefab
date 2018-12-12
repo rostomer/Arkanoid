@@ -60,9 +60,11 @@ GameObject:
   - component: {fileID: 4139969604147282}
   - component: {fileID: 198925336309057988}
   - component: {fileID: 199986040530760372}
+  - component: {fileID: 135012637783541692}
+  - component: {fileID: 114032764648475136}
   m_Layer: 0
   m_Name: BurstUpgrade
-  m_TagString: Untagged
+  m_TagString: UpgradedBirstBall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82,7 +84,7 @@ GameObject:
   - component: {fileID: 114460189248904196}
   m_Layer: 0
   m_Name: Ball
-  m_TagString: Untagged
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -138,7 +140,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1068441477860478}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.741355, y: -3.0913444, z: -4.679467}
+  m_LocalPosition: {x: 1.9476922, y: -3.3634968, z: -9.160147}
   m_LocalScale: {x: 1, y: 1, z: 5}
   m_Children:
   - {fileID: 4789893942084204}
@@ -420,6 +422,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.0395637, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114032764648475136
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1681024932042548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb47e46bc35c57e4eba166e2ac91660b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  birstTime: 0.03
 --- !u!114 &114067613865282320
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -446,6 +460,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballInitialVelocity: 600
   childBurstParticlesObject: {fileID: 1681024932042548}
+  birstTime: 0.03
+--- !u!135 &135012637783541692
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1681024932042548}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 1.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &135687715584047014
 SphereCollider:
   m_ObjectHideFlags: 1

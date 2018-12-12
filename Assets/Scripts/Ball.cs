@@ -6,14 +6,16 @@ using System.Reflection;
 public class Ball : MonoBehaviour {
 
     public float ballInitialVelocity = 600f;
-    public GameObject childBurstParticlesObject;
+    public GameObject childBurstParticlesObject;   
 
     private Rigidbody rb = new Rigidbody();
     private Renderer rend;
+
     private bool ballInPlay = false;
 
     void Awake()
-    {        
+    {  
+
         rend = GetComponent<Renderer>();
 
         rb = GetComponent<Rigidbody>();
@@ -26,8 +28,12 @@ public class Ball : MonoBehaviour {
             Material birstBallMaterial = other.gameObject.GetComponent<Renderer>().material;
 
             childBurstParticlesObject.SetActive(true);
+            Birst.isBirst = true;
+
             ParticleSystem birstParticles = childBurstParticlesObject.GetComponent<ParticleSystem>();
             birstParticles.Play();
+
+
             rend.material = birstBallMaterial;
           //  Instantiate(ps, transform.position, Quaternion.identity);
             Destroy(other.gameObject);
@@ -36,17 +42,10 @@ public class Ball : MonoBehaviour {
 
 	// Use this for initialization
 	
-	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetButtonDown("Fire1") && ballInPlay == false)
-        {
-            Debug.Log("Fire1");
-            transform.parent = null;
-            ballInPlay = true;
-            rb.isKinematic = false;
-            rb.AddForce(new Vector3(ballInitialVelocity, ballInitialVelocity, 0));
-        }
+        LaunchBall();
+
     }
 
     void OnCollisionEnter(Collision other)
@@ -54,6 +53,18 @@ public class Ball : MonoBehaviour {
         if(other.gameObject.tag == "Brick")
         {
             GameManager.instance.ProduceSound();
+        }
+    }
+
+    private void LaunchBall()
+    {
+        if (Input.GetButtonDown("Fire1") && ballInPlay == false)
+        {
+            Debug.Log("Fire1");
+            transform.parent = null;
+            ballInPlay = true;
+            rb.isKinematic = false;
+            rb.AddForce(new Vector3(ballInitialVelocity, ballInitialVelocity, 0));
         }
     }
 }

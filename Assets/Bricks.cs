@@ -8,21 +8,42 @@ public class Bricks : MonoBehaviour {
     public int durabilityPoints;
     public static AudioSource contactWithBall;
 
+    public static Bricks instance = null;
+
     private Renderer rend;
 
     void Start()
     {
+        instance = this;
+
         rend = GetComponent<Renderer>();
         contactWithBall = GetComponent<AudioSource>();
     }
 
     void OnCollisionEnter(Collision other)
     {
+        if (other.gameObject.CompareTag("UpgradedBirstBall"))
+        {
+            BrickTakesDamage();
+        }
+        if (other.gameObject.CompareTag("Ball"))
+        {
+            BrickTakesDamage();
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+
+    }
+
+    public void BrickTakesDamage()
+    {
         durabilityPoints--;
 
         if (durabilityPoints <= 0)
         {
-            if(Random.value <= GameManager.instance.spawnChance)
+            if (Random.value <= GameManager.instance.spawnChance)
             {
                 Instantiate(GameManager.instance.BurstBall, transform.position, Quaternion.identity);
 
@@ -32,16 +53,12 @@ public class Bricks : MonoBehaviour {
             {
                 GameManager.instance.spawnChance += 0.01f;
             }
-       
+
             Instantiate(brickParticle, transform.position, Quaternion.identity);
             GameManager.instance.DestroyBrick();
             Destroy(gameObject);
         }
-    
+
         rend.material.SetColor("_Color", Random.ColorHSV());
-        
     }
-
-
-
 }
