@@ -6,7 +6,7 @@ public class DeathZone : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Ball"))
+        if (other.gameObject.CompareTag("Ball") || other.gameObject.CompareTag("UpgradedBirstBall"))
         GameManager.instance.LoseLife();
     }
 

@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour {
     public GameObject player;
     public float speed = 5f;
 
-    private Rigidbody rigidbody;
+    private new Rigidbody rigidbody;
 	// Use this for initialization
 	void Start () {
         rigidbody = GetComponent<Rigidbody>();

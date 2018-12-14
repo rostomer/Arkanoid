@@ -34,7 +34,10 @@ public class Bricks : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-
+        if (other.gameObject.CompareTag("UpgradedBirstBall"))
+        {
+            BrickTakesDamage();
+        }
     }
 
     public void BrickTakesDamage()

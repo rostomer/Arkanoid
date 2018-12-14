@@ -6,7 +6,7 @@ using System.Reflection;
 public class Ball : MonoBehaviour {
 
     public float ballInitialVelocity = 600f;
-    public GameObject childBurstParticlesObject;   
+    public GameObject childBurstParticlesObject;
 
     private Rigidbody rb = new Rigidbody();
     private Renderer rend;
@@ -25,14 +25,14 @@ public class Ball : MonoBehaviour {
     {
         if(other.gameObject.CompareTag("BirstBall"))
         {
+            gameObject.tag = "UpgradedBirstBall";
+
             Material birstBallMaterial = other.gameObject.GetComponent<Renderer>().material;
 
             childBurstParticlesObject.SetActive(true);
-            Birst.isBirst = true;
 
             ParticleSystem birstParticles = childBurstParticlesObject.GetComponent<ParticleSystem>();
             birstParticles.Play();
-
 
             rend.material = birstBallMaterial;
           //  Instantiate(ps, transform.position, Quaternion.identity);
@@ -52,9 +52,15 @@ public class Ball : MonoBehaviour {
     {
         if(other.gameObject.tag == "Brick")
         {
+            Birst.isBirst = true;
+
             GameManager.instance.ProduceSound();
+
+          //  Birst.isBirst = false;
         }
     }
+
+
 
     private void LaunchBall()
     {

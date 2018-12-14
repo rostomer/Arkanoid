@@ -3,13 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Birst : MonoBehaviour {
-    private float birstTime = 0.03f;
 
     private Collider birstZone;
     // используй в качестве тиггера для срабатывания коллайдера
     public static bool isBirst = false;
-
-    private float timeCounter = 0f;
 
     void OnTriggerEnter(Collider other)
     {
@@ -27,25 +24,38 @@ public class Birst : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (isBirst)
-            birstZone.enabled = true;
-        else
-            birstZone.enabled = false;
-       
-        if (birstZone.enabled)
-        {
-            //    Debug.Log("time " + timeCounter);
 
-            timeCounter += Time.deltaTime;
-        }
-        if (timeCounter >= birstTime)
+        if(IsBirst())
         {
-            birstZone.enabled = false;
-            timeCounter = 0;
+            StartCoroutine(ExplosionTime());
+            isBirst = false;
         }
 
         if (birstZone == null)
             return;
 
+    }
+
+    private bool IsBirst()
+    {
+        if (isBirst)
+        {
+            Debug.Log("Birst");
+            birstZone.enabled = true;
+            return true;
+
+        }
+        else
+        {
+            birstZone.enabled = false;
+            return false;
+        }
+    }
+
+    IEnumerator ExplosionTime()
+    {
+       // print(Time.time);
+        yield return new WaitForSeconds(2f);
+       // print(Time.time);
     }
 }
