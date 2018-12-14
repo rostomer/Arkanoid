@@ -8,8 +8,7 @@ public class GameManager : MonoBehaviour {
     public Vector3 paddleSpawnCoorditates;
     public Vector3 paddleEulerQuaternian;
     public Vector3 BricksSpawnCoordinates;
-    public int lives = 3;
-    public int bricks = 20;
+    public int lives = 3;   
     public float resetDelay = 1f;
     public int sceneNum = 0;
     public float spawnChance = 0.5f;
@@ -23,6 +22,7 @@ public class GameManager : MonoBehaviour {
     public AudioSource brickHeat;
     public static GameManager instance = null;
 
+    private int bricksAmount = 20;
     private GameObject cloneHadle;
 	// Use this for initialization
 	void Awake () {
@@ -49,11 +49,17 @@ public class GameManager : MonoBehaviour {
         //normalBlock
         cloneHadle = Instantiate(newPaddle, paddleSpawnCoorditates, Quaternion.Euler(paddleEulerQuaternian)) as GameObject;
         Instantiate(brickPrefab, BricksSpawnCoordinates, Quaternion.identity);
+
+        GameObject[] bricks = GameObject.FindGameObjectsWithTag("Brick");
+
+        Debug.Log(bricks.Length);
+
+        bricksAmount = bricks.Length;
     }
 
     void CheckGameover()
     {
-        if(bricks < 1)
+        if(bricksAmount < 1)
         {
             youWon.SetActive(true);
             Time.timeScale = .25f;
@@ -96,7 +102,7 @@ public class GameManager : MonoBehaviour {
 
     public void DestroyBrick()
     {
-        bricks--;
+        bricksAmount--;
 
         CheckGameover();
     }

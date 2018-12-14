@@ -8,6 +8,8 @@ TagManager:
   - BirstBall
   - Ball
   - UpgradedBirstBall
+  - LeftWall
+  - RightWall
   layers:
   - Default
   - TransparentFX
