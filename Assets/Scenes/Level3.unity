@@ -1029,6 +1029,7 @@ MonoBehaviour:
     type: 2}
   BurstBall: {fileID: 1367784168066596, guid: 810f13551b1ae03409c297c0f5cf1c41, type: 2}
   brickHeat: {fileID: 2020754555}
+  autoGeneration: 1
   bricksAmount: 20
 --- !u!4 &2020754554
 Transform:
@@ -1151,7 +1152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPrefab: {fileID: 1705480570}
   block: {fileID: 1375669617666362, guid: 1e4249c42b4d8c94c8a06489de7ef005, type: 2}
-  blocksAmount: 30
+  blocksAmount: 40
   durableBlock: {fileID: 0}
   DurableBlockAmount: 0
   veryDurableBlock: {fileID: 0}

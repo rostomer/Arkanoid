@@ -22,7 +22,11 @@ public class GameManager : MonoBehaviour {
     public AudioSource brickHeat;
     public static GameManager instance = null;
 
-    public int bricksAmount = 20;
+    public bool autoGeneration;
+
+    [HideInInspector]
+    public int bricksAmount = 0;
+
     private GameObject cloneHadle;
 	// Use this for initialization
 	void Start () {
@@ -33,8 +37,11 @@ public class GameManager : MonoBehaviour {
         else if (instance != this)
             Destroy(gameObject);
 
+
+
         Setup();
-	}
+
+    }
 
     public void ProduceSound()
     {
@@ -44,13 +51,16 @@ public class GameManager : MonoBehaviour {
     public void Setup()
     {
         cloneHadle = Instantiate(newPaddle, paddleSpawnCoorditates, Quaternion.Euler(paddleEulerQuaternian)) as GameObject;
+
+        if (autoGeneration) return;
+
         Instantiate(brickPrefab, BricksSpawnCoordinates, Quaternion.identity);
 
         GameObject[] bricks = GameObject.FindGameObjectsWithTag("Brick");
 
         Debug.Log(bricks.Length);
 
-        bricksAmount = bricks.Length;
+        instance.bricksAmount = bricks.Length;
     }
 
     void CheckGameover()

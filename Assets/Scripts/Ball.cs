@@ -83,10 +83,17 @@ public class Ball : MonoBehaviour {
         if (Input.GetButtonDown("Fire1") && ballInPlay == false)
         {
             Debug.Log("Fire1");
+
             transform.parent = null;
             ballInPlay = true;
             rb.isKinematic = false;
             rb.velocity = (new Vector3(ballInitialVelocity, ballInitialVelocity, 0) * Time.deltaTime);
+
+            GameObject[] bricks = GameObject.FindGameObjectsWithTag("Brick");
+
+            GameManager.instance.bricksAmount = bricks.Length;
+
+            Debug.Log(GameManager.instance.bricksAmount);
         }
     }
 

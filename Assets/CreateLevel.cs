@@ -31,6 +31,7 @@ public class CreateLevel : MonoBehaviour {
         firstBrickPos = new Vector3(startXPos, 7.5f, 0f);
 
         CreateGroup();
+
     }
 
     void CreateGroup()
@@ -41,6 +42,8 @@ public class CreateLevel : MonoBehaviour {
         {
             CreateAgent();
         }
+
+
     }
 
     public void CreateAgent()
@@ -48,11 +51,6 @@ public class CreateLevel : MonoBehaviour {
         float directionFacing = Random.Range(0f, 360f);
 
         Vector3 point = firstBrickPos;
-        // need to pick a random position around originPoint but inside spawnRadius
-        // must not be too close to another agent inside spawnRadius
-
-
-
 
         Instantiate(block, point, Quaternion.identity);
 
@@ -60,7 +58,7 @@ public class CreateLevel : MonoBehaviour {
 
         if (point.x >= rightWallPos.x)
         {
-            point.y -= 1.5f;
+            point.y -= 1.3f;
             point.x = startXPos;
         }
 
