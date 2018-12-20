@@ -34,6 +34,15 @@ public class CreateLevel : MonoBehaviour {
 
     }
 
+    void Start()
+    {
+        GameObject[] bricks = GameObject.FindGameObjectsWithTag("Brick");
+
+        GameManager.instance.bricksAmount = bricks.Length;
+
+        Debug.Log(GameManager.instance.bricksAmount);
+    }
+
     void CreateGroup()
     {
         originPoint = spawnPrefab.gameObject.transform.position;

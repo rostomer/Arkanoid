@@ -89,11 +89,6 @@ public class Ball : MonoBehaviour {
             rb.isKinematic = false;
             rb.velocity = (new Vector3(ballInitialVelocity, ballInitialVelocity, 0) * Time.deltaTime);
 
-            GameObject[] bricks = GameObject.FindGameObjectsWithTag("Brick");
-
-            GameManager.instance.bricksAmount = bricks.Length;
-
-            Debug.Log(GameManager.instance.bricksAmount);
         }
     }
 
