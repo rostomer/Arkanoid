@@ -335,7 +335,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 450118665}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.7740963, z: 0}
+  m_LocalPosition: {x: 0, y: -4.19, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 683178475}
@@ -511,7 +511,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 534669902}
   m_LocalRotation: {x: 0.031585164, y: 0, z: 0, w: 0.9995011}
-  m_LocalPosition: {x: -0, y: 1, z: -21.5}
+  m_LocalPosition: {x: -2.5, y: 1, z: -21.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1001,6 +1001,7 @@ MonoBehaviour:
     type: 2}
   BurstBall: {fileID: 1367784168066596, guid: 810f13551b1ae03409c297c0f5cf1c41, type: 2}
   brickHeat: {fileID: 2020754555}
+  bricksAmount: 20
 --- !u!4 &2020754554
 Transform:
   m_ObjectHideFlags: 0

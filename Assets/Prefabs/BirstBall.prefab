@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 108944334121751438}
   - component: {fileID: 198298708882988036}
   - component: {fileID: 199076614692467510}
+  - component: {fileID: 114697877555437520}
   m_Layer: 0
   m_Name: BirstBall
   m_TagString: BirstBall
@@ -124,6 +125,17 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114697877555437520
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1367784168066596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bd59bf95428d3a4eb96d51642c57c9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &135886194100642476
 SphereCollider:
   m_ObjectHideFlags: 1

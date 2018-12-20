@@ -79,9 +79,9 @@ GameObject:
   - component: {fileID: 4789893942084204}
   - component: {fileID: 33098619501051102}
   - component: {fileID: 23974000378165594}
-  - component: {fileID: 135687715584047014}
   - component: {fileID: 54472279453261354}
   - component: {fileID: 114460189248904196}
+  - component: {fileID: 136956417307136152}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Ball
@@ -140,7 +140,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1068441477860478}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.3752866, y: -3.3954203, z: -5.785224}
+  m_LocalPosition: {x: 2.3545923, y: -5.957979, z: 3.4543095}
   m_LocalScale: {x: 1, y: 1, z: 5}
   m_Children:
   - {fileID: 4789893942084204}
@@ -459,6 +459,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballInitialVelocity: 600
   childBurstParticlesObject: {fileID: 1681024932042548}
+  birstPickUpParticles: {fileID: 1814097326226292, guid: c893078766df1974fae161adf7ae61bf,
+    type: 2}
 --- !u!135 &135012637783541692
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -471,8 +473,8 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 2
   m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &135687715584047014
-SphereCollider:
+--- !u!136 &136956417307136152
+CapsuleCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -480,9 +482,10 @@ SphereCollider:
   m_Material: {fileID: 13400000, guid: 5d3789f631e514a4a989c7c6ee222255, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.5000001
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0.00000023841858, y: 0, z: 0}
 --- !u!198 &198925336309057988
 ParticleSystem:
   m_ObjectHideFlags: 1

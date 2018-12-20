@@ -22,10 +22,10 @@ public class GameManager : MonoBehaviour {
     public AudioSource brickHeat;
     public static GameManager instance = null;
 
-    private int bricksAmount = 20;
+    public int bricksAmount = 20;
     private GameObject cloneHadle;
 	// Use this for initialization
-	void Awake () {
+	void Start () {
         brickHeat = GetComponent<AudioSource>();
 
         if (instance == null)
@@ -43,10 +43,6 @@ public class GameManager : MonoBehaviour {
 
     public void Setup()
     {
-        //hardcodeBlock
-        //cloneHadle = Instantiate(newPaddle, transform.position, Quaternion.Euler(0f, 90f, 0f)) as GameObject;
-        //Instantiate(brickPrefab, new Vector3(-2.3f, -4f, 0f), Quaternion.identity);
-        //normalBlock
         cloneHadle = Instantiate(newPaddle, paddleSpawnCoorditates, Quaternion.Euler(paddleEulerQuaternian)) as GameObject;
         Instantiate(brickPrefab, BricksSpawnCoordinates, Quaternion.identity);
 
@@ -59,7 +55,7 @@ public class GameManager : MonoBehaviour {
 
     void CheckGameover()
     {
-        if(bricksAmount < 1)
+        if(bricksAmount <= 0)
         {
             youWon.SetActive(true);
             Time.timeScale = .25f;
@@ -102,7 +98,9 @@ public class GameManager : MonoBehaviour {
 
     public void DestroyBrick()
     {
-        bricksAmount--;
+       // bricksAmount--;
+
+        Debug.Log("Bricks left: " + bricksAmount);
 
         CheckGameover();
     }

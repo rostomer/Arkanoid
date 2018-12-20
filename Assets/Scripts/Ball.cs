@@ -8,8 +8,13 @@ public class Ball : MonoBehaviour {
     public float ballInitialVelocity = 600f;
     public GameObject childBurstParticlesObject;
 
+    public GameObject birstPickUpParticles;
+
     private Rigidbody rb = new Rigidbody();
     private Renderer rend;
+    private Material originalmaterial;
+
+    private Coroutine currentCoroutine = null;
 
     private bool ballInPlay = false;
 
@@ -17,26 +22,18 @@ public class Ball : MonoBehaviour {
     {  
 
         rend = GetComponent<Renderer>();
+        originalmaterial = rend.material;
 
         rb = GetComponent<Rigidbody>();
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("BirstBall"))
+        if(other.gameObject.CompareTag("BirstBall") &&
+            (gameObject.tag == "Ball" || gameObject.tag == "UpgradedBirstBall"))
         {
-            gameObject.tag = "UpgradedBirstBall";
-
-            Material birstBallMaterial = other.gameObject.GetComponent<Renderer>().material;
-
-            childBurstParticlesObject.SetActive(true);
-
-            ParticleSystem birstParticles = childBurstParticlesObject.GetComponent<ParticleSystem>();
-            birstParticles.Play();
-
-            rend.material = birstBallMaterial;
-          //  Instantiate(ps, transform.position, Quaternion.identity);
-            Destroy(other.gameObject);
+            Instantiate(birstPickUpParticles, transform.position, Quaternion.identity);
+            BirstBonusPickUp(other);
         }
     }
 
@@ -60,7 +57,26 @@ public class Ball : MonoBehaviour {
         }
     }
 
+    private void BirstBonusPickUp(Collider other)
+    {
+        gameObject.tag = "UpgradedBirstBall";
 
+        Material birstBallMaterial = other.gameObject.GetComponent<Renderer>().material;
+
+        childBurstParticlesObject.SetActive(true);
+
+        ParticleSystem birstParticles = childBurstParticlesObject.GetComponent<ParticleSystem>();
+        birstParticles.Play();
+
+        rend.material = birstBallMaterial;
+
+        if (currentCoroutine != null)
+            StopCoroutine(currentCoroutine);
+        currentCoroutine = StartCoroutine(ExplosionTime());
+
+        //  Instantiate(ps, transform.position, Quaternion.identity);
+
+    }
 
     private void LaunchBall()
     {
@@ -70,7 +86,24 @@ public class Ball : MonoBehaviour {
             transform.parent = null;
             ballInPlay = true;
             rb.isKinematic = false;
-            rb.AddForce(new Vector3(ballInitialVelocity, ballInitialVelocity, 0));
+            rb.velocity = (new Vector3(ballInitialVelocity, ballInitialVelocity, 0) * Time.deltaTime);
         }
+    }
+
+    IEnumerator ExplosionTime()
+    {
+         print(Time.time);
+
+        Physics.IgnoreCollision(GetComponent<Collider>(),
+    GameObject.FindGameObjectWithTag("BirstBall").GetComponent<Collider>());
+
+        yield return new WaitForSeconds(10f);
+
+        gameObject.tag = "Ball";
+         print(Time.time);
+
+        childBurstParticlesObject.SetActive(false);
+
+        rend.material = originalmaterial;
     }
 }

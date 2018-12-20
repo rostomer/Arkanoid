@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1514446339017676}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.0517383, y: 24.18003, z: -53.28817}
+  m_LocalPosition: {x: -0.7796652, y: -0.09066105, z: 11.884712}
   m_LocalScale: {x: 2, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -59,7 +59,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: c9aa9ee84721eb7408ff140756a7d217, type: 2}
+  - {fileID: 2100000, guid: 72ebbda38c48b97438bef364350391cc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -207,4 +207,3 @@ MonoBehaviour:
   brickParticle: {fileID: 1154754081169126, guid: fdbef0c2c1acafe4a8b564f0587bdb4c,
     type: 2}
   durabilityPoints: 2
-  contactWithBall: {fileID: 82085464132784716}
