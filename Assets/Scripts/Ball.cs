@@ -5,7 +5,7 @@ using System.Reflection;
 
 public class Ball : MonoBehaviour {
 
-    public float ballInitialVelocity = 600f;
+    public static float ballInitialVelocity = 600f;
     public GameObject childBurstParticlesObject;
 
     public GameObject birstPickUpParticles;
@@ -19,7 +19,7 @@ public class Ball : MonoBehaviour {
     private bool ballInPlay = false;
 
     void Awake()
-    {  
+    {
 
         rend = GetComponent<Renderer>();
         originalmaterial = rend.material;

@@ -65,6 +65,13 @@ public class GameManager : MonoBehaviour {
 
     void CheckGameover()
     {
+        if(autoGeneration && bricksAmount <= 0)
+        {
+            CreateLevel.instance.UplevelDifficalty();
+
+            return;
+        }
+
         if(bricksAmount <= 0)
         {
             youWon.SetActive(true);

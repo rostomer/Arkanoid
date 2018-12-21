@@ -9,47 +9,47 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1514446339017676}
+  m_RootGameObject: {fileID: 1946295611001474}
   m_IsPrefabAsset: 1
---- !u!1 &1514446339017676
+--- !u!1 &1946295611001474
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4774052003563024}
-  - component: {fileID: 33751022658375246}
-  - component: {fileID: 23030500190578038}
-  - component: {fileID: 65877618521613288}
-  - component: {fileID: 114345824360151492}
-  - component: {fileID: 82085464132784716}
+  - component: {fileID: 4907540327633388}
+  - component: {fileID: 33417499582106270}
+  - component: {fileID: 23139426145919114}
+  - component: {fileID: 65251793772651264}
+  - component: {fileID: 114306562330728766}
+  - component: {fileID: 82403125541810932}
   m_Layer: 0
-  m_Name: DurableBrick
+  m_Name: VeryDurableBrick
   m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4774052003563024
+--- !u!4 &4907540327633388
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1514446339017676}
+  m_GameObject: {fileID: 1946295611001474}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.7796652, y: -0.09066105, z: 11.884712}
+  m_LocalPosition: {x: -4.2587433, y: 1.9094578, z: 12.035412}
   m_LocalScale: {x: 2, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23030500190578038
+--- !u!23 &23139426145919114
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1514446339017676}
+  m_GameObject: {fileID: 1946295611001474}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -59,7 +59,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 72ebbda38c48b97438bef364350391cc, type: 2}
+  - {fileID: 2100000, guid: b161880588f083344a1d534149f4b7fe, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -79,31 +79,31 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33751022658375246
+--- !u!33 &33417499582106270
 MeshFilter:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1514446339017676}
+  m_GameObject: {fileID: 1946295611001474}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &65877618521613288
+--- !u!65 &65251793772651264
 BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1514446339017676}
+  m_GameObject: {fileID: 1946295611001474}
   m_Material: {fileID: 13400000, guid: 5d3789f631e514a4a989c7c6ee222255, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!82 &82085464132784716
+--- !u!82 &82403125541810932
 AudioSource:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1514446339017676}
+  m_GameObject: {fileID: 1946295611001474}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -193,12 +193,12 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &114345824360151492
+--- !u!114 &114306562330728766
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1514446339017676}
+  m_GameObject: {fileID: 1946295611001474}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3fcdb30df2e5d434587fd7c8e95f9e84, type: 3}
@@ -206,4 +206,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brickParticle: {fileID: 1154754081169126, guid: fdbef0c2c1acafe4a8b564f0587bdb4c,
     type: 2}
-  durabilityPoints: 2
+  durabilityPoints: 3

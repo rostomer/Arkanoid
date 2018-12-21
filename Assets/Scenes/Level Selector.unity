@@ -230,7 +230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a6d53edd1d871a4cb3d403948e41029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelNum: 2
+  levelName: Level1
 --- !u!1 &582669369
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,7 +314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a6d53edd1d871a4cb3d403948e41029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelNum: 3
+  levelName: Level2
 --- !u!95 &603998761
 Animator:
   serializedVersion: 3
@@ -602,7 +602,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000030517578, y: -0.000016042886}
+  m_AnchoredPosition: {x: 0.000030517578, y: -0.000015258789}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &855499658
@@ -997,7 +997,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a6d53edd1d871a4cb3d403948e41029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelNum: 0
+  levelName: 
 --- !u!1 &1435696762
 GameObject:
   m_ObjectHideFlags: 0
@@ -1246,4 +1246,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a6d53edd1d871a4cb3d403948e41029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelNum: 0
+  levelName: 

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,67 +9,137 @@ public class CreateLevel : MonoBehaviour {
     public GameObject block;
     public int blocksAmount;
     public GameObject durableBlock;
-    public int DurableBlockAmount;
     public GameObject veryDurableBlock;
-    public int veryDurableBlockAmount;
 
     private Vector3 firstBrickPos;
     private Vector3 leftWallPos;
     private Vector3 rightWallPos;
 
-    private float startXPos;
+    private float spawnXPos;
+    private float startSpawnXPos;
+    private float startSpawnYPos;
+    private Vector3 point;
 
+    public static CreateLevel instance = null;
 
     Vector3 originPoint;
 
     void Awake()
     {
+        if (instance == null)
+            instance = this;
+        else if (instance != this)
+            Destroy(gameObject);
+
         leftWallPos = GameObject.FindGameObjectWithTag("LeftWall").transform.position;
         rightWallPos = GameObject.FindGameObjectWithTag("RightWall").transform.position;
+        startSpawnYPos = GameObject.FindGameObjectWithTag("Roof").transform.position.y - 2f;
 
-        startXPos = leftWallPos.x + 1.5f;
+        spawnXPos = leftWallPos.x + 3f;
+        startSpawnXPos = spawnXPos;
 
-        firstBrickPos = new Vector3(startXPos, 7.5f, 0f);
+        firstBrickPos = new Vector3(spawnXPos, startSpawnYPos, 0f);
 
-        CreateGroup();
+        CreateGroupOfBlocks();
 
     }
 
-    void Start()
+    public void UplevelDifficalty()
+    {
+        blocksAmount += 2;
+
+        foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Brick"))
+        Destroy(obj);
+
+        CreateGroupOfBlocks();
+
+        Debug.Log("BlockAmount: " + blocksAmount);
+
+        try
+        {
+            Destroy(GameObject.FindGameObjectWithTag("Ball"));
+        }
+        catch(Exception e)
+        {
+            Debug.Log(e.ToString());
+        }
+
+        try
+        {
+            Destroy(GameObject.FindGameObjectWithTag("UpgradedBirstBall"));
+        }
+        catch (Exception e)
+        {
+            Debug.Log(e.ToString());
+        }
+
+
+        Destroy(GameObject.FindGameObjectWithTag("Player"));
+
+        GameManager.instance.Setup();
+
+        Ball.ballInitialVelocity += 20;
+
+        SearchForBricks();
+    }
+
+    private void SearchForBricks()
     {
         GameObject[] bricks = GameObject.FindGameObjectsWithTag("Brick");
 
-        GameManager.instance.bricksAmount = bricks.Length;
+        GameManager.instance.bricksAmount = blocksAmount;
 
         Debug.Log(GameManager.instance.bricksAmount);
     }
 
-    void CreateGroup()
+    void Start()
     {
-        originPoint = spawnPrefab.gameObject.transform.position;
+        SearchForBricks();
+    }
+
+    void CreateGroupOfBlocks()
+    {
+        firstBrickPos = new Vector3(spawnXPos, startSpawnYPos, 0f);
 
         for (int i = 0; i < blocksAmount; i++)
         {
-            CreateAgent();
+            SpawnBlock();
         }
-
-
     }
 
-    public void CreateAgent()
+    public void SpawnBlock()
     {
-        float directionFacing = Random.Range(0f, 360f);
 
-        Vector3 point = firstBrickPos;
+        GameObject blockForSpawn = block;
 
-        Instantiate(block, point, Quaternion.identity);
+        int BlockType = UnityEngine.Random.Range(1, 4);
+
+        switch (BlockType)
+        {
+            case 1:
+                blockForSpawn = block;
+                Debug.Log("block has spawned");
+                break;
+            case 2:
+                blockForSpawn = durableBlock;
+                Debug.Log("Durable block has spawned");
+                break;
+            case 3:
+                blockForSpawn = veryDurableBlock;
+                Debug.Log("Very durable block has spawned");
+                break;
+        }
+
+        point = firstBrickPos;
+
+        Instantiate(blockForSpawn, point, Quaternion.identity);
 
         point = new Vector3(point.x + 3f, point.y, 0);
 
-        if (point.x >= rightWallPos.x)
+        if (point.x >= rightWallPos.x - 1f)
         {
-            point.y -= 1.3f;
-            point.x = startXPos;
+            point.y -= 1.5f;
+            point.x = spawnXPos;
         }
 
         firstBrickPos = point;

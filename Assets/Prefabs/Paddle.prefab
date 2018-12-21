@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 54969233026235022}
   m_Layer: 0
   m_Name: Paddle
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -215,7 +215,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd68632b566bffa4b81913722dc732cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballInitialVelocity: 600
+  childBurstParticlesObject: {fileID: 0}
+  birstPickUpParticles: {fileID: 0}
 --- !u!114 &114625565930041962
 MonoBehaviour:
   m_ObjectHideFlags: 1
