@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour {
     public int sceneNum = 0;
     public float spawnChance = 0.5f;
     public Text livesText;
+    public Text BricksText;
+    public Text scoreText;
+    public GameObject pauseMenu;
     public GameObject gameOver;
     public GameObject youWon;
     public GameObject brickPrefab;
@@ -24,12 +27,17 @@ public class GameManager : MonoBehaviour {
 
     public bool autoGeneration;
 
-    [HideInInspector]
+
     public int bricksAmount = 0;
 
     private GameObject cloneHadle;
-	// Use this for initialization
-	void Start () {
+    [HideInInspector]
+    public GameObject ball;
+    public static int currentScore = 0;
+
+
+    // Use this for initialization
+    void Start () {
         brickHeat = GetComponent<AudioSource>();
 
         if (instance == null)
@@ -37,7 +45,7 @@ public class GameManager : MonoBehaviour {
         else if (instance != this)
             Destroy(gameObject);
 
-
+        scoreText.text = "Score: 0";
 
         Setup();
 
@@ -51,6 +59,7 @@ public class GameManager : MonoBehaviour {
     public void Setup()
     {
         cloneHadle = Instantiate(newPaddle, paddleSpawnCoorditates, Quaternion.Euler(paddleEulerQuaternian)) as GameObject;
+        ball = GameObject.FindGameObjectWithTag("Ball");
 
         if (autoGeneration) return;
 
@@ -60,7 +69,17 @@ public class GameManager : MonoBehaviour {
 
         Debug.Log(bricks.Length);
 
+        BricksText.text = "Bricks left: " + bricks.Length;
+
         instance.bricksAmount = bricks.Length;
+    }
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Pause();
+        }
     }
 
     void CheckGameover()
@@ -115,11 +134,62 @@ public class GameManager : MonoBehaviour {
 
     public void DestroyBrick()
     {
-       // bricksAmount--;
+
+        scoreText.text = "Score: " + currentScore;
+
+        BricksText.text = "Bricks left: " + bricksAmount;
 
         Debug.Log("Bricks left: " + bricksAmount);
 
         CheckGameover();
+    }
+
+    private void Pause()
+    {
+        try
+        {
+            ball = GameObject.FindGameObjectWithTag("UpgradedBirstBall");
+        }
+        catch(System.Exception e)
+        {
+            Debug.Log(e.ToString());
+        }
+
+        try
+        {
+            ball = GameObject.FindGameObjectWithTag("Ball");
+        }
+        catch (System.Exception e)
+        {
+            Debug.Log(e.ToString());
+        }
+
+        cloneHadle.SetActive(false);
+
+   //     ball.SetActive(false);
+
+        Time.timeScale = 0f;
+        pauseMenu.SetActive(true);
+    }
+
+    private void Continue()
+    {
+        cloneHadle.SetActive(true);
+     //   ball.SetActive(true);
+
+        Time.timeScale = 1f;
+        pauseMenu.SetActive(false);
+    }
+
+    private void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1f;
+    }
+
+    private void GoToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
     
 }

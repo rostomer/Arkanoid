@@ -108,7 +108,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6b57ad0c046088149836896119896996, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -204,6 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fcdb30df2e5d434587fd7c8e95f9e84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brickParticle: {fileID: 1154754081169126, guid: fdbef0c2c1acafe4a8b564f0587bdb4c,
+  brickParticle: {fileID: 1957506090455438, guid: 4959ea01648ff754392bfb95d2ee06ec,
     type: 2}
   durabilityPoints: 3
+  brickPrice: 200

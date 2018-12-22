@@ -10,6 +10,7 @@ TagManager:
   - UpgradedBirstBall
   - LeftWall
   - RightWall
+  - Roof
   layers:
   - Default
   - TransparentFX

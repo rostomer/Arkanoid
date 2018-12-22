@@ -207,3 +207,4 @@ MonoBehaviour:
   brickParticle: {fileID: 1252802223698490, guid: a3d52801ae5579d45b87d32ca1236a56,
     type: 2}
   durabilityPoints: 1
+  brickPrice: 100

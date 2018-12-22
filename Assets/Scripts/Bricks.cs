@@ -8,6 +8,8 @@ public class Bricks : MonoBehaviour {
     public int durabilityPoints;
     public static AudioSource contactWithBall;
 
+    public int brickPrice;
+
     public static Bricks instance = null;
 
     private Renderer rend;
@@ -53,6 +55,8 @@ public class Bricks : MonoBehaviour {
                 GameManager.instance.spawnChance += 0.01f;
             }
             --GameManager.instance.bricksAmount;
+
+            GameManager.currentScore += brickPrice;
 
             GameManager.instance.DestroyBrick();
 

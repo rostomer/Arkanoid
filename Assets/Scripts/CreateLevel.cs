@@ -57,7 +57,7 @@ public class CreateLevel : MonoBehaviour {
 
         try
         {
-            Destroy(GameObject.FindGameObjectWithTag("Ball"));
+            Destroy(GameManager.instance.ball);
         }
         catch(Exception e)
         {
@@ -66,7 +66,7 @@ public class CreateLevel : MonoBehaviour {
 
         try
         {
-            Destroy(GameObject.FindGameObjectWithTag("UpgradedBirstBall"));
+            Destroy(GameObject.FindGameObjectWithTag("BirstBall"));
         }
         catch (Exception e)
         {
@@ -85,7 +85,7 @@ public class CreateLevel : MonoBehaviour {
 
     private void SearchForBricks()
     {
-        GameObject[] bricks = GameObject.FindGameObjectsWithTag("Brick");
+       // GameObject[] bricks = GameObject.FindGameObjectsWithTag("Brick");
 
         GameManager.instance.bricksAmount = blocksAmount;
 
@@ -95,6 +95,8 @@ public class CreateLevel : MonoBehaviour {
     void Start()
     {
         SearchForBricks();
+
+        GameManager.instance.BricksText.text = "Bricks left: " + blocksAmount;
     }
 
     void CreateGroupOfBlocks()

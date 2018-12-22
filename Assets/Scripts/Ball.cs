@@ -15,8 +15,8 @@ public class Ball : MonoBehaviour {
     private Material originalmaterial;
 
     private Coroutine currentCoroutine = null;
-
-    private bool ballInPlay = false;
+    [HideInInspector]
+    public bool ballInPlay = false;
 
     void Awake()
     {
@@ -43,6 +43,10 @@ public class Ball : MonoBehaviour {
 	void Update () {
         LaunchBall();
 
+        if(Input.GetKeyDown(KeyCode.S))
+        {
+            rb.velocity = (new Vector3(ballInitialVelocity, 0, 0) * Time.deltaTime);
+        }
     }
 
     void OnCollisionEnter(Collision other)
