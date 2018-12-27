@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour {
     public GameObject newPaddle;
     public GameObject deathParticles;
     public GameObject BurstBall;
+    public GameObject HeavyBall;
     public AudioSource brickHeat;
     public static GameManager instance = null;
 
@@ -38,6 +39,9 @@ public class GameManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        if (Time.timeScale != 1f)
+            Time.timeScale = 1f;
+
         brickHeat = GetComponent<AudioSource>();
 
         if (instance == null)
@@ -121,6 +125,7 @@ public class GameManager : MonoBehaviour {
         Instantiate(deathParticles, cloneHadle.transform.position, Quaternion.identity);
 
         Destroy(cloneHadle);
+        Destroy(ball);
 
         Invoke("SetupPaddle", resetDelay);
 
@@ -144,7 +149,7 @@ public class GameManager : MonoBehaviour {
         CheckGameover();
     }
 
-    private void Pause()
+    public void Pause()
     {
         try
         {
@@ -172,7 +177,7 @@ public class GameManager : MonoBehaviour {
         pauseMenu.SetActive(true);
     }
 
-    private void Continue()
+    public void Continue()
     {
         cloneHadle.SetActive(true);
      //   ball.SetActive(true);
@@ -181,13 +186,13 @@ public class GameManager : MonoBehaviour {
         pauseMenu.SetActive(false);
     }
 
-    private void Restart()
+    public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1f;
     }
 
-    private void GoToMainMenu()
+    public void GoToMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
     }

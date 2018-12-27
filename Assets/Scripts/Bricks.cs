@@ -24,7 +24,7 @@ public class Bricks : MonoBehaviour {
 
     void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("Ball"))
+        if (other.gameObject.CompareTag("Ball") || other.gameObject.CompareTag("UpgradedHeavyBall"))
         {
             BrickTakesDamage();
         }
@@ -40,15 +40,24 @@ public class Bricks : MonoBehaviour {
 
     public void BrickTakesDamage()
     {
-        durabilityPoints--;
+        durabilityPoints -= Ball.instance.DealDamage();
 
         if (durabilityPoints <= 0)
         {
             if (Random.value <= GameManager.instance.spawnChance)
             {
-                Instantiate(GameManager.instance.BurstBall, transform.position, Quaternion.identity);
-
-                GameManager.instance.spawnChance = 0.05f;
+                float chance = Random.Range(0f, 10f);
+                if (chance <= 5f)
+                {
+                    Debug.Log(chance);
+                    Instantiate(GameManager.instance.BurstBall, transform.position, Quaternion.identity);
+                }
+                else
+                {
+                    Instantiate(GameManager.instance.HeavyBall, transform.position, Quaternion.identity);
+                    Debug.Log(chance);
+                }
+                    GameManager.instance.spawnChance = 0.05f;
             }
             else
             {

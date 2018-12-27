@@ -11,6 +11,8 @@ TagManager:
   - LeftWall
   - RightWall
   - Roof
+  - HeavyBall
+  - UpgradedHeavyBall
   layers:
   - Default
   - TransparentFX

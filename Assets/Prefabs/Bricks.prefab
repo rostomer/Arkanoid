@@ -5544,6 +5544,7 @@ MonoBehaviour:
   brickParticle: {fileID: 1252802223698490, guid: a3d52801ae5579d45b87d32ca1236a56,
     type: 2}
   durabilityPoints: 1
+  brickPrice: 100
 --- !u!114 &114091473299879180
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5558,6 +5559,7 @@ MonoBehaviour:
   brickParticle: {fileID: 1252802223698490, guid: a3d52801ae5579d45b87d32ca1236a56,
     type: 2}
   durabilityPoints: 1
+  brickPrice: 100
 --- !u!114 &114096015910108578
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5572,6 +5574,7 @@ MonoBehaviour:
   brickParticle: {fileID: 1252802223698490, guid: a3d52801ae5579d45b87d32ca1236a56,
     type: 2}
   durabilityPoints: 1
+  brickPrice: 100
 --- !u!114 &114116224147628438
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5586,6 +5589,7 @@ MonoBehaviour:
   brickParticle: {fileID: 1252802223698490, guid: a3d52801ae5579d45b87d32ca1236a56,
     type: 2}
   durabilityPoints: 1
+  brickPrice: 100
 --- !u!114 &114245297140756092
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5600,6 +5604,7 @@ MonoBehaviour:
   brickParticle: {fileID: 1154754081169126, guid: fdbef0c2c1acafe4a8b564f0587bdb4c,
     type: 2}
   durabilityPoints: 2
+  brickPrice: 150
 --- !u!114 &114256257456113802
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5614,6 +5619,7 @@ MonoBehaviour:
   brickParticle: {fileID: 1252802223698490, guid: a3d52801ae5579d45b87d32ca1236a56,
     type: 2}
   durabilityPoints: 1
+  brickPrice: 100
 --- !u!114 &114274143083107316
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5628,6 +5634,7 @@ MonoBehaviour:
   brickParticle: {fileID: 1252802223698490, guid: a3d52801ae5579d45b87d32ca1236a56,
     type: 2}
   durabilityPoints: 1
+  brickPrice: 100
 --- !u!114 &114289959465237210
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5642,6 +5649,7 @@ MonoBehaviour:
   brickParticle: {fileID: 1252802223698490, guid: a3d52801ae5579d45b87d32ca1236a56,
     type: 2}
   durabilityPoints: 1
+  brickPrice: 100
 --- !u!114 &114295367715381460
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5656,6 +5664,7 @@ MonoBehaviour:
   brickParticle: {fileID: 1252802223698490, guid: a3d52801ae5579d45b87d32ca1236a56,
     type: 2}
   durabilityPoints: 1
+  brickPrice: 100
 --- !u!114 &114338416048526008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5670,6 +5679,7 @@ MonoBehaviour:
   brickParticle: {fileID: 1252802223698490, guid: a3d52801ae5579d45b87d32ca1236a56,
     type: 2}
   durabilityPoints: 1
+  brickPrice: 100
 --- !u!114 &114339507298042520
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5684,6 +5694,7 @@ MonoBehaviour:
   brickParticle: {fileID: 1252802223698490, guid: a3d52801ae5579d45b87d32ca1236a56,
     type: 2}
   durabilityPoints: 1
+  brickPrice: 100
 --- !u!114 &114342409691049008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5698,6 +5709,7 @@ MonoBehaviour:
   brickParticle: {fileID: 1154754081169126, guid: fdbef0c2c1acafe4a8b564f0587bdb4c,
     type: 2}
   durabilityPoints: 2
+  brickPrice: 150
 --- !u!114 &114376304872855986
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5712,6 +5724,7 @@ MonoBehaviour:
   brickParticle: {fileID: 1252802223698490, guid: a3d52801ae5579d45b87d32ca1236a56,
     type: 2}
   durabilityPoints: 1
+  brickPrice: 100
 --- !u!114 &114435998162554084
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5726,6 +5739,7 @@ MonoBehaviour:
   brickParticle: {fileID: 1252802223698490, guid: a3d52801ae5579d45b87d32ca1236a56,
     type: 2}
   durabilityPoints: 1
+  brickPrice: 100
 --- !u!114 &114450095491453902
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5740,6 +5754,7 @@ MonoBehaviour:
   brickParticle: {fileID: 1252802223698490, guid: a3d52801ae5579d45b87d32ca1236a56,
     type: 2}
   durabilityPoints: 1
+  brickPrice: 100
 --- !u!114 &114469197417314300
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5754,6 +5769,7 @@ MonoBehaviour:
   brickParticle: {fileID: 1252802223698490, guid: a3d52801ae5579d45b87d32ca1236a56,
     type: 2}
   durabilityPoints: 1
+  brickPrice: 100
 --- !u!114 &114469365666248156
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5768,6 +5784,7 @@ MonoBehaviour:
   brickParticle: {fileID: 1252802223698490, guid: a3d52801ae5579d45b87d32ca1236a56,
     type: 2}
   durabilityPoints: 1
+  brickPrice: 0
 --- !u!114 &114589842161154086
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5782,6 +5799,7 @@ MonoBehaviour:
   brickParticle: {fileID: 1252802223698490, guid: a3d52801ae5579d45b87d32ca1236a56,
     type: 2}
   durabilityPoints: 1
+  brickPrice: 100
 --- !u!114 &114616942739998226
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5796,6 +5814,7 @@ MonoBehaviour:
   brickParticle: {fileID: 1252802223698490, guid: a3d52801ae5579d45b87d32ca1236a56,
     type: 2}
   durabilityPoints: 1
+  brickPrice: 100
 --- !u!114 &114658137111520838
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5810,6 +5829,7 @@ MonoBehaviour:
   brickParticle: {fileID: 1154754081169126, guid: fdbef0c2c1acafe4a8b564f0587bdb4c,
     type: 2}
   durabilityPoints: 2
+  brickPrice: 150
 --- !u!114 &114696172627854516
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5824,6 +5844,7 @@ MonoBehaviour:
   brickParticle: {fileID: 1252802223698490, guid: a3d52801ae5579d45b87d32ca1236a56,
     type: 2}
   durabilityPoints: 1
+  brickPrice: 100
 --- !u!114 &114696793448442044
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5838,6 +5859,7 @@ MonoBehaviour:
   brickParticle: {fileID: 1252802223698490, guid: a3d52801ae5579d45b87d32ca1236a56,
     type: 2}
   durabilityPoints: 1
+  brickPrice: 100
 --- !u!114 &114718996993709866
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5852,6 +5874,7 @@ MonoBehaviour:
   brickParticle: {fileID: 1252802223698490, guid: a3d52801ae5579d45b87d32ca1236a56,
     type: 2}
   durabilityPoints: 1
+  brickPrice: 100
 --- !u!114 &114724631422543128
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5866,6 +5889,7 @@ MonoBehaviour:
   brickParticle: {fileID: 1252802223698490, guid: a3d52801ae5579d45b87d32ca1236a56,
     type: 2}
   durabilityPoints: 1
+  brickPrice: 100
 --- !u!114 &114759299462966616
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5880,6 +5904,7 @@ MonoBehaviour:
   brickParticle: {fileID: 1252802223698490, guid: a3d52801ae5579d45b87d32ca1236a56,
     type: 2}
   durabilityPoints: 1
+  brickPrice: 100
 --- !u!114 &114771863245467306
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5894,6 +5919,7 @@ MonoBehaviour:
   brickParticle: {fileID: 1252802223698490, guid: a3d52801ae5579d45b87d32ca1236a56,
     type: 2}
   durabilityPoints: 1
+  brickPrice: 100
 --- !u!114 &114794117993386942
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5908,6 +5934,7 @@ MonoBehaviour:
   brickParticle: {fileID: 1154754081169126, guid: fdbef0c2c1acafe4a8b564f0587bdb4c,
     type: 2}
   durabilityPoints: 2
+  brickPrice: 150
 --- !u!114 &114915366415796338
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5922,6 +5949,7 @@ MonoBehaviour:
   brickParticle: {fileID: 1154754081169126, guid: fdbef0c2c1acafe4a8b564f0587bdb4c,
     type: 2}
   durabilityPoints: 2
+  brickPrice: 150
 --- !u!114 &114930910712781268
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5936,6 +5964,7 @@ MonoBehaviour:
   brickParticle: {fileID: 1252802223698490, guid: a3d52801ae5579d45b87d32ca1236a56,
     type: 2}
   durabilityPoints: 1
+  brickPrice: 100
 --- !u!114 &114937996084722386
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5950,6 +5979,7 @@ MonoBehaviour:
   brickParticle: {fileID: 1154754081169126, guid: fdbef0c2c1acafe4a8b564f0587bdb4c,
     type: 2}
   durabilityPoints: 2
+  brickPrice: 150
 --- !u!114 &114948649766488752
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5964,3 +5994,4 @@ MonoBehaviour:
   brickParticle: {fileID: 1252802223698490, guid: a3d52801ae5579d45b87d32ca1236a56,
     type: 2}
   durabilityPoints: 1
+  brickPrice: 100

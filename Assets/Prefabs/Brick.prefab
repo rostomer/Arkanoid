@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4573544823348994}
   - component: {fileID: 33952444502690932}
   - component: {fileID: 23553759790809960}
-  - component: {fileID: 65945351241251174}
   - component: {fileID: 114519776403947352}
   - component: {fileID: 82791278699260056}
+  - component: {fileID: 136762262333642138}
   m_Layer: 0
   m_Name: Brick
   m_TagString: Brick
@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1375669617666362}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.907844, y: 0.9295901, z: 12.006538}
+  m_LocalPosition: {x: -9.120523, y: 1.2545319, z: -9.079478}
   m_LocalScale: {x: 2, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -86,18 +86,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1375669617666362}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &65945351241251174
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1375669617666362}
-  m_Material: {fileID: 13400000, guid: 5d3789f631e514a4a989c7c6ee222255, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!82 &82791278699260056
 AudioSource:
   m_ObjectHideFlags: 1
@@ -208,3 +196,16 @@ MonoBehaviour:
     type: 2}
   durabilityPoints: 1
   brickPrice: 100
+--- !u!136 &136762262333642138
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1375669617666362}
+  m_Material: {fileID: 13400000, guid: 5d3789f631e514a4a989c7c6ee222255, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.6591101
+  m_Height: 1.360188
+  m_Direction: 0
+  m_Center: {x: -0.0271132, y: 0, z: 0}

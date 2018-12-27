@@ -53,28 +53,9 @@ public class CreateLevel : MonoBehaviour {
 
         CreateGroupOfBlocks();
 
+        DestroyBeforeUpgrade();
+
         Debug.Log("BlockAmount: " + blocksAmount);
-
-        try
-        {
-            Destroy(GameManager.instance.ball);
-        }
-        catch(Exception e)
-        {
-            Debug.Log(e.ToString());
-        }
-
-        try
-        {
-            Destroy(GameObject.FindGameObjectWithTag("BirstBall"));
-        }
-        catch (Exception e)
-        {
-            Debug.Log(e.ToString());
-        }
-
-
-        Destroy(GameObject.FindGameObjectWithTag("Player"));
 
         GameManager.instance.Setup();
 
@@ -107,6 +88,62 @@ public class CreateLevel : MonoBehaviour {
         {
             SpawnBlock();
         }
+    }
+
+    private void DestroyBeforeUpgrade()
+    {
+        try
+        {
+            Destroy(GameManager.instance.ball);
+        }
+        catch (Exception e)
+        {
+            Debug.Log(e.ToString());
+        }
+
+        try
+        {
+            Destroy(GameObject.FindGameObjectWithTag("BirstBall"));
+        }
+        catch (Exception e)
+        {
+            Debug.Log(e.ToString());
+        }
+        try
+        {
+            Destroy(GameObject.FindGameObjectWithTag("HeavyBall"));
+        }
+        catch (Exception e)
+        {
+            Debug.Log(e.ToString());
+        }
+        try
+        {
+            Destroy(GameObject.FindGameObjectWithTag("Ball"));
+        }
+        catch (Exception e)
+        {
+            Debug.Log(e.ToString());
+        }
+        try
+        {
+            Destroy(GameObject.FindGameObjectWithTag("UpgradedHeavyBall"));
+        }
+        catch (Exception e)
+        {
+            Debug.Log(e.ToString());
+        }
+        try
+        {
+            Destroy(GameObject.FindGameObjectWithTag("UpgradedBirstBall"));
+        }
+        catch (Exception e)
+        {
+            Debug.Log(e.ToString());
+        }
+
+
+        Destroy(GameObject.FindGameObjectWithTag("Player"));
     }
 
     public void SpawnBlock()

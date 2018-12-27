@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4774052003563024}
   - component: {fileID: 33751022658375246}
   - component: {fileID: 23030500190578038}
-  - component: {fileID: 65877618521613288}
   - component: {fileID: 114345824360151492}
   - component: {fileID: 82085464132784716}
+  - component: {fileID: 136098868260286858}
   m_Layer: 0
   m_Name: DurableBrick
   m_TagString: Brick
@@ -86,18 +86,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1514446339017676}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &65877618521613288
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1514446339017676}
-  m_Material: {fileID: 13400000, guid: 5d3789f631e514a4a989c7c6ee222255, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!82 &82085464132784716
 AudioSource:
   m_ObjectHideFlags: 1
@@ -208,3 +196,16 @@ MonoBehaviour:
     type: 2}
   durabilityPoints: 2
   brickPrice: 150
+--- !u!136 &136098868260286858
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1514446339017676}
+  m_Material: {fileID: 13400000, guid: 5d3789f631e514a4a989c7c6ee222255, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.6591101
+  m_Height: 1.360188
+  m_Direction: 0
+  m_Center: {x: 0, y: 0, z: 0}

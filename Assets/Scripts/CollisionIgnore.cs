@@ -13,7 +13,9 @@ public class CollisionIgnore : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Ball") || other.gameObject.CompareTag("UpgradedBirstBall"))
+        if (other.gameObject.CompareTag("Ball")
+            || other.gameObject.CompareTag("UpgradedBirstBall")
+            || other.gameObject.CompareTag("UpgradedHeavyBall"))
         {
             Destroy(gameObject);
         }

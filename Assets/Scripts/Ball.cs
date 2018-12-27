@@ -10,6 +10,8 @@ public class Ball : MonoBehaviour {
 
     public GameObject birstPickUpParticles;
 
+    public int damageDealt = 1;
+
     private Rigidbody rb = new Rigidbody();
     private Renderer rend;
     private Material originalmaterial;
@@ -18,8 +20,11 @@ public class Ball : MonoBehaviour {
     [HideInInspector]
     public bool ballInPlay = false;
 
+    public static Ball instance = null;
+
     void Awake()
     {
+        instance = this;
 
         rend = GetComponent<Renderer>();
         originalmaterial = rend.material;
@@ -30,10 +35,17 @@ public class Ball : MonoBehaviour {
     void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("BirstBall") &&
-            (gameObject.tag == "Ball" || gameObject.tag == "UpgradedBirstBall"))
+            (gameObject.tag == "Ball" || gameObject.tag == "UpgradedBirstBall"
+            || gameObject.tag == "UpgradedHeavyBall"))
         {
             Instantiate(birstPickUpParticles, transform.position, Quaternion.identity);
             BirstBonusPickUp(other);
+        }
+        if(other.gameObject.CompareTag("HeavyBall") &&
+            (gameObject.tag == "Ball" || gameObject.tag == "UpgradedBirstBall")
+            || gameObject.tag == "UpgradedHeavyBall")
+        {
+            HeavyBonusPickUp(other);
         }
     }
 
@@ -45,7 +57,7 @@ public class Ball : MonoBehaviour {
 
         if(Input.GetKeyDown(KeyCode.S))
         {
-            rb.velocity = (new Vector3(ballInitialVelocity, 0, 0) * Time.deltaTime);
+            rb.velocity = (new Vector3(ballInitialVelocity + 100f, -300f, 0f) * Time.deltaTime);
         }
     }
 
@@ -82,6 +94,25 @@ public class Ball : MonoBehaviour {
 
     }
 
+    private void HeavyBonusPickUp(Collider other)
+    {
+        gameObject.tag = "UpgradedHeavyBall";
+
+        Material heavyBallMaterial = other.gameObject.GetComponent<Renderer>().material;
+        rend.material = heavyBallMaterial;
+
+        damageDealt = 2;
+
+        if (currentCoroutine != null)
+            StopCoroutine(currentCoroutine);
+        currentCoroutine = StartCoroutine(HeavyBonusPicked());
+    }
+
+    public int DealDamage()
+    {
+        return damageDealt;
+    }
+
     private void LaunchBall()
     {
         if (Input.GetButtonDown("Fire1") && ballInPlay == false)
@@ -109,6 +140,19 @@ public class Ball : MonoBehaviour {
          print(Time.time);
 
         childBurstParticlesObject.SetActive(false);
+
+        rend.material = originalmaterial;
+    }
+
+    IEnumerator HeavyBonusPicked()
+    {
+        print(Time.time);
+
+        yield return new WaitForSeconds(14f);
+
+        gameObject.tag = "Ball";
+        damageDealt = 1;
+        print(Time.time);
 
         rend.material = originalmaterial;
     }

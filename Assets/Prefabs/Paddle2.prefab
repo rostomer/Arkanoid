@@ -140,7 +140,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1068441477860478}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.177621, y: 6.449753, z: 15.654542}
+  m_LocalPosition: {x: -7.7716503, y: -1.2309055, z: -6.9242086}
   m_LocalScale: {x: 1, y: 1, z: 5}
   m_Children:
   - {fileID: 4789893942084204}
@@ -357,7 +357,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 8
   m_CollisionDetection: 0
 --- !u!54 &54590195486409452
 Rigidbody:
@@ -460,6 +460,8 @@ MonoBehaviour:
   childBurstParticlesObject: {fileID: 1681024932042548}
   birstPickUpParticles: {fileID: 1814097326226292, guid: c893078766df1974fae161adf7ae61bf,
     type: 2}
+  damageDealt: 1
+  ballInPlay: 0
 --- !u!135 &135012637783541692
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -481,10 +483,10 @@ CapsuleCollider:
   m_Material: {fileID: 13400000, guid: 5d3789f631e514a4a989c7c6ee222255, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 1
+  m_Radius: 0.5341523
+  m_Height: 1.0851744
   m_Direction: 1
-  m_Center: {x: 0.00000023841858, y: 0, z: 0}
+  m_Center: {x: 0.015879279, y: -0.018230379, z: 0.020975232}
 --- !u!198 &198925336309057988
 ParticleSystem:
   m_ObjectHideFlags: 1

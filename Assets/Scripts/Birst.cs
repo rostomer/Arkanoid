@@ -5,18 +5,9 @@ using UnityEngine;
 public class Birst : MonoBehaviour {
 
     private Collider birstZone;
-    // используй в качестве тиггера для срабатывания коллайдера
+
     public static bool isBirst = false;
 
-    //void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.gameObject.CompareTag("Brick"))
-    //    {
-    //        Debug.Log("Hit");
-    //  //      Bricks.instance.BrickTakesDamage();
-    //   //     birstZone.enabled = true;
-    //    }
-    //}
 	// Use this for initialization
 	void Start () {
         birstZone = GetComponent<Collider>();
@@ -44,7 +35,6 @@ public class Birst : MonoBehaviour {
     {
         if (isBirst)
         {
-         //   Debug.Log("Birst");
             birstZone.enabled = true;
             return true;
 
