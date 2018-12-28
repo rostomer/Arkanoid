@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: Oswald Bold SDF 1
   m_EditorClassIdentifier: 
-  hashCode: 1490843414
+  hashCode: 30840967
   material: {fileID: 2147374}
   materialHashCode: -1516456483
   fontAssetType: 1

@@ -64,6 +64,7 @@ public class Bricks : MonoBehaviour {
                 GameManager.instance.spawnChance += 0.01f;
             }
             --GameManager.instance.bricksAmount;
+            ++GameManager.instance.bricksDestroyed;
 
             GameManager.currentScore += brickPrice;
 

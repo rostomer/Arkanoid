@@ -12,9 +12,11 @@ public class GameManager : MonoBehaviour {
     public float resetDelay = 1f;
     public int sceneNum = 0;
     public float spawnChance = 0.5f;
+
     public Text livesText;
     public Text BricksText;
     public Text scoreText;
+
     public GameObject pauseMenu;
     public GameObject gameOver;
     public GameObject youWon;
@@ -24,16 +26,19 @@ public class GameManager : MonoBehaviour {
     public GameObject BurstBall;
     public GameObject HeavyBall;
     public AudioSource brickHeat;
+
     public static GameManager instance = null;
 
     public bool autoGeneration;
-
 
     public int bricksAmount = 0;
 
     private GameObject cloneHadle;
     [HideInInspector]
     public GameObject ball;
+
+    [HideInInspector]
+    public int bricksDestroyed = 0;
     public static int currentScore = 0;
 
 
@@ -108,6 +113,16 @@ public class GameManager : MonoBehaviour {
             Time.timeScale = .25f;
             Invoke("Reset", resetDelay);
         }
+
+        if (lives < 1 && autoGeneration)
+        {
+            gameOver.SetActive(true);
+            Time.timeScale = .25f;
+            GameControl.instance.Save();
+            SceneManager.LoadScene("MainMenu");
+        }
+
+
     }
 
     void Reset()

@@ -4,31 +4,36 @@ using UnityEngine;
 using System;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using UnityEngine.UI;
 
 public class GameControl : MonoBehaviour {
 
-    public static GameControl control;
+    public static GameControl instance;
 
+    public string nickname;
     public int score;
-    public int lifes;
+    public int bricksDestroyed;
 
     void Awake()
     {
-        if(control == null)
+        if(instance == null)
         {
             DontDestroyOnLoad(gameObject);
-            control = this;
+            instance = this;
         }
-        else if (control != this)
+        else if (instance != this)
         {
             Destroy(gameObject);
         }
+
+        Load();
     }
 
     void OnGUI()
     {
         GUI.Label(new Rect(10, 10, 150, 30), "Score: " + score);
-        GUI.Label(new Rect(10, 40, 150, 30), "Lifes: " + lifes);
+        GUI.Label(new Rect(10, 40, 150, 30), "Bricks destroyed: " + bricksDestroyed);
+        GUI.Label(new Rect(10, 70, 150, 30), "Nickname: " + nickname);
     }
 
     public void Save()
@@ -38,8 +43,9 @@ public class GameControl : MonoBehaviour {
 
         PlayerData data = new PlayerData();
 
-        data.score = score;
-        data.lifes = lifes;
+        data.Score = score;
+        data.BricksDestroyed = bricksDestroyed;
+        data.PlayerNickname = nickname;
 
         bf.Serialize(file, data);
         file.Close();
@@ -54,14 +60,17 @@ public class GameControl : MonoBehaviour {
             PlayerData data = (PlayerData)bf.Deserialize(file);
             file.Close();
 
-            score = data.score;
-            lifes = data.lifes;
+            score = data.Score;
+            bricksDestroyed = data.BricksDestroyed;
+            nickname = data.PlayerNickname;
         }
     }
+
+    public void ReadNickName()
+    {
+        InputField field = FindObjectOfType<InputField>();
+
+        nickname = field.text;
+    }
 }
-    [Serializable]
-    public class PlayerData
-{
-    public int score;
-    public int lifes;
-}
+

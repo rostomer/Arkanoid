@@ -8,27 +8,17 @@ public class Adjust : MonoBehaviour {
         {
         if (GUI.Button(new Rect(10, 100, 100, 30), "Score UP"))
         {
-            GameControl.control.score += 10;
-        }
-
-        if (GUI.Button(new Rect(10, 180, 100, 30), "Lifes Down"))
-        {
-            GameControl.control.lifes -= 1;
-        }
-
-        if (GUI.Button(new Rect(10, 220, 100, 30), "Lifes Up"))
-        {
-            GameControl.control.lifes += 1;
+            GameControl.instance.score += 10;
         }
 
         if (GUI.Button(new Rect(10, 260, 100, 30), "Save"))
         {
-            GameControl.control.Save();
+            GameControl.instance.Save();
         }
 
         if (GUI.Button(new Rect(10, 300, 100, 30), "Load"))
         {
-            GameControl.control.Load();
+            GameControl.instance.Load();
         }
 
     }
