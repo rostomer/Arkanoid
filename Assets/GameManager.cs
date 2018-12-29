@@ -152,16 +152,26 @@ public class GameManager : MonoBehaviour {
         cloneHadle = Instantiate(newPaddle, transform.position, Quaternion.Euler(paddleEulerQuaternian)) as GameObject;
     }
 
-    public void DestroyBrick()
+    public void DestroyBrick(int brickPrice)
     {
+        --bricksAmount;
+        ++bricksDestroyed;
 
+        currentScore += brickPrice;
+        GameControl.instance.score = currentScore;
+
+        UpdateUI();
+
+        CheckGameover();
+    }
+
+    public void UpdateUI()
+    {
         scoreText.text = "Score: " + currentScore;
 
         BricksText.text = "Bricks left: " + bricksAmount;
 
         Debug.Log("Bricks left: " + bricksAmount);
-
-        CheckGameover();
     }
 
     public void Pause()
