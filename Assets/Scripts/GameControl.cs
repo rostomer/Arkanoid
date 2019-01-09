@@ -14,6 +14,14 @@ public class GameControl : MonoBehaviour {
     public int score;
     public int bricksDestroyed;
 
+    [HideInInspector]
+    public PlayerData leader = null;
+    [HideInInspector]
+    public List<PlayerData> leaders;
+    [HideInInspector]
+    public PlayerData oldLeaders = null;
+    
+
     void Awake()
     {
         if(instance == null)
@@ -27,6 +35,7 @@ public class GameControl : MonoBehaviour {
         }
 
         Load();
+       // leaders = Load();
     }
 
     void OnGUI()
@@ -43,34 +52,31 @@ public class GameControl : MonoBehaviour {
 
         PlayerData data = new PlayerData();
 
-        data.Score = score;
-        data.BricksDestroyed = bricksDestroyed;
-        data.PlayerNickname = nickname;
-
-        bf.Serialize(file, data);
+            data.Score = leader.Score;
+            data.PlayerNickname = leader.PlayerNickname;
+            data.BricksDestroyed = leader.BricksDestroyed;
+       
+                leaders.Add(leader);
+     
+        if (leaders != null)
+            Debug.Log("Added");
+         
+        bf.Serialize(file, leaders);
         file.Close();
     }
 
     public void Load()
     {
-        if(File.Exists(Application.persistentDataPath + "/playerInfo.dat"))
+      
+        if (File.Exists(Application.persistentDataPath + "/playerInfo.dat"))
         {
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file = File.Open(Application.persistentDataPath + "/playerInfo.dat", FileMode.Open);
-            PlayerData data = (PlayerData)bf.Deserialize(file);
-            file.Close();
-
-            score = data.Score;
-            bricksDestroyed = data.BricksDestroyed;
-            nickname = data.PlayerNickname;
+            leaders = (List<PlayerData>)bf.Deserialize(file);
+            if (leaders != null)
+                Debug.Log("Loaded");
+            file.Close();         
         }
-    }
-
-    public void ReadNickName()
-    {
-        InputField field = FindObjectOfType<InputField>();
-
-        nickname = field.text;
     }
 }
 

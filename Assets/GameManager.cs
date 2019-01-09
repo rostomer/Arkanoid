@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,6 +9,10 @@ public class GameManager : MonoBehaviour {
     public Vector3 paddleSpawnCoorditates;
     public Vector3 paddleEulerQuaternian;
     public Vector3 BricksSpawnCoordinates;
+
+ //   public string NextLevel = "Level2";
+    public int nextLevelUnlock = 2;
+
     public int lives = 3;   
     public float resetDelay = 1f;
     public int sceneNum = 0;
@@ -36,10 +41,15 @@ public class GameManager : MonoBehaviour {
     private GameObject cloneHadle;
     [HideInInspector]
     public GameObject ball;
+    [HideInInspector]
+    public PlayerData previousLeaderData;
 
     [HideInInspector]
     public int bricksDestroyed = 0;
+    [HideInInspector]
     public static int currentScore = 0;
+
+
 
 
     // Use this for initialization
@@ -81,6 +91,19 @@ public class GameManager : MonoBehaviour {
         BricksText.text = "Bricks left: " + bricks.Length;
 
         instance.bricksAmount = bricks.Length;
+
+        //List<int> temp = new List<int>();
+
+        //for (int i = 0; i < 10; i++)
+        //{
+        //    temp.Add(i);
+        //}
+
+        //foreach(int k in temp)
+        //{
+        //    Debug.Log(k);
+        //}
+
     }
 
     public void Update()
@@ -104,6 +127,9 @@ public class GameManager : MonoBehaviour {
         {
             youWon.SetActive(true);
             Time.timeScale = .25f;
+            //storing the infirmation about reached level;
+            PlayerPrefs.SetInt("levelReached", nextLevelUnlock);
+
             Invoke("Reset", resetDelay);
         }
 
@@ -118,7 +144,14 @@ public class GameManager : MonoBehaviour {
         {
             gameOver.SetActive(true);
             Time.timeScale = .25f;
-            GameControl.instance.Save();
+
+            List<PlayerData> compareList = GameControl.instance.leaders;
+         
+                    GameControl.instance.leader.Score = currentScore;
+                    GameControl.instance.leader.BricksDestroyed = bricksDestroyed;
+
+                    GameControl.instance.Save();
+      
             SceneManager.LoadScene("MainMenu");
         }
 

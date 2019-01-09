@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EndlessRun.unity
     guid: 9544fb473722cb249830c85745f7ae7b
+  - enabled: 1
+    path: Assets/Scenes/Leaders Board.unity
+    guid: 93d2262b36c44e746b2a72ef44ac1b22
   m_configObjects: {}

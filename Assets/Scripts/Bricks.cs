@@ -64,6 +64,7 @@ public class Bricks : MonoBehaviour {
                 GameManager.instance.spawnChance += 0.01f;
             }
 
+            GameControl.instance.leader.BricksDestroyed++;
             GameManager.instance.DestroyBrick(brickPrice);
 
             Instantiate(brickParticle, transform.position, Quaternion.identity);
