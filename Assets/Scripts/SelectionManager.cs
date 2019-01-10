@@ -7,6 +7,8 @@ public class SelectionManager : MonoBehaviour {
 
     public Button[] levelButtons;
 
+    //unlocking levels if they are reached in arcade mode;
+
 	// Use this for initialization
 	void Start () {
         int levelReached = PlayerPrefs.GetInt("levelReached", 1);

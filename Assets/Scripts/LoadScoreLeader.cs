@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -18,7 +19,9 @@ public class LoadScoreLeader : MonoBehaviour {
 
         List<PlayerData> sortList = GameControl.instance.leaders;
 
-        sortList.Sort((x, y) => y.Score - x.Score);
+        GameControl.instance.leaders = GameControl.instance.leaders.OrderByDescending(playerData => playerData.Score).ToList();
+
+        GameControl.instance.leaders = CheckListLength(GameControl.instance.leaders);
 
         CheckNewLeader();
 	}
@@ -40,6 +43,21 @@ public class LoadScoreLeader : MonoBehaviour {
 
             Instantiate(UITextToClone, ContentUI.transform);
         }
-
     }
+
+    private List<PlayerData> CheckListLength(List<PlayerData> data)
+    {
+        if(data.Count > 20)
+        {
+            for (int i = 20; i < data.Count; i++)
+            {
+                data.RemoveAt(i);
+            }            
+        }
+        return data;
+    }
+
+
+    //test Function
+ 
 }

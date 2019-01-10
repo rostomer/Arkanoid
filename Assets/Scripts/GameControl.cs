@@ -5,6 +5,7 @@ using System;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using UnityEngine.UI;
+using System.Linq;
 
 public class GameControl : MonoBehaviour {
 
@@ -34,6 +35,8 @@ public class GameControl : MonoBehaviour {
             Destroy(gameObject);
         }
 
+        //leader = null;
+
         Load();
        // leaders = Load();
     }
@@ -50,14 +53,23 @@ public class GameControl : MonoBehaviour {
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath + "/playerInfo.dat");
 
-        PlayerData data = new PlayerData();
+        bool existingPlayer = false;
 
-            data.Score = leader.Score;
-            data.PlayerNickname = leader.PlayerNickname;
-            data.BricksDestroyed = leader.BricksDestroyed;
-       
+        foreach(PlayerData dat in leaders)
+        {
+            if(dat.PlayerNickname == leader.PlayerNickname)
+            {
+                existingPlayer = true;
+            }
+        }
+            if(!existingPlayer)
                 leaders.Add(leader);
-     
+            else if(existingPlayer)
+                {
+                    leaders = RemoveExistingPlayerWithLessScore(leaders);
+                    leaders.Add(leader);
+        }
+            
         if (leaders != null)
             Debug.Log("Added");
          
@@ -77,6 +89,27 @@ public class GameControl : MonoBehaviour {
                 Debug.Log("Loaded");
             file.Close();         
         }
+    }
+
+    //Bad Linq using
+    //private List<PlayerData> CheckEqualValues(List<PlayerData> data)
+    //{
+    //    var newData = from pickData in data
+    //                  where pickData.PlayerNickname == leader.PlayerNickname
+    //                  orderby pickData.Score
+    //                  select pickData;
+
+    //    data = newData.ToList();
+
+    //    Debug.Log("Type: " + newData.GetType());
+
+    //    return data;
+    //}
+
+    private List<PlayerData> RemoveExistingPlayerWithLessScore(List<PlayerData> data)
+    {
+        data.RemoveAll(x => x.PlayerNickname == leader.PlayerNickname && x.Score < leader.Score);
+        return data;
     }
 }
 
